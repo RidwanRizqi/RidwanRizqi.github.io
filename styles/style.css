@@ -1,21 +1,14 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
 
 * {
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Inter', sans-serif;
     margin: 0;
     padding: 0;
-    scroll-padding-top: 1rem;
     scroll-behavior: smooth;
     list-style: none;
     text-decoration: none;
     box-sizing: border-box;
-}
-
-:root {
-    --main-color: #0057FF;
-    /*--main-color: #f88210;*/
-    --text-color: #020102;
-    --bg-color: white;
 }
 
 html::-webkit-scrollbar {
@@ -24,8 +17,9 @@ html::-webkit-scrollbar {
 }
 
 html::-webkit-scrollbar-thumb {
-    background: var(--main-color);
-    border-radius: 0.5rem;
+    background: #0057FF;
+    border-top-left-radius: 0.5rem;
+    border-bottom-left-radius: 0.5rem;
 }
 
 section {
@@ -37,7 +31,7 @@ img {
 }
 
 body {
-    color: var(--text-color);
+    color: #020102;
 }
 
 .container {
@@ -55,14 +49,14 @@ header {
     z-index: 100;
 }
 
-header.shadow {
-    background: var(--bg-color);
+header.show {
+    background: white;
     box-shadow: 4px 4px 20px rgb(15 54 55 / 10%);
     transition: 0.5s ease;
 }
 
-header.shadow #search-icon {
-    color: var(--main-color);
+header.show #search-icon {
+    color: #0057FF;
 }
 
 .nav {
@@ -75,18 +69,18 @@ header.shadow #search-icon {
 #menu-icon {
     font-size: 24px;
     cursor: pointer;
-    color: var(--text-color);
+    color: #0057FF;
     display: none;
 }
 
 .logo {
     font-size: 1.2rem;
     font-weight: 700;
-    color: var(--text-color);
+    color: #020102;
 }
 
 .logo span {
-    color: var(--main-color);
+    color: #0057FF;
 }
 
 .navbar {
@@ -95,23 +89,23 @@ header.shadow #search-icon {
 }
 
 .navbar a {
-    color: var(--text-color);
+    color: #020102;
     font-size: 1rem;
-    text-transform: uppercase;
     font-weight: 500;
+    text-transform: uppercase;
 }
 
 .navbar a:hover,
 .navbar .active {
-    color: var(--main-color);
-    border-bottom: 3px solid var(--main-color);
-    transition: 0.2s linear;
+    color: #0057FF;
+    border-bottom: 0.2rem solid #0057FF;
+    transition: 0.3s ease-in-out;
 }
 
 #search-icon {
-    font-size: 24px;
+    font-size: 1.5rem;
     cursor: pointer;
-    color: var(--bg-color);
+    color: white;
 }
 
 .search-box {
@@ -119,21 +113,21 @@ header.shadow #search-icon {
     top: 110%;
     right: 0;
     left: 0;
-    background: var(--bg-color);
-    box-shadow: 4px 4px 20px rgb(15 54 55 / 10%);
-    border: 1px solid var(--main-color);
+    background: white;
+    box-shadow: 0 2px 4px darkgrey inset;
+    border: 1px solid #0057FF;
     border-radius: 0.5rem;
-    clip-path: circle(0% at 100% 0%);
+    clip-path: ellipse(0% 0% at 100% 50%);
 }
 
 .search-box.active {
-    clip-path: circle(144% at 100% 0%);
-    transition: 0.4s;
+    clip-path: ellipse(150% 150% at 100% 50%);
+    transition: 0.8s;
 }
 
 .search-box input {
     width: 100%;
-    padding: 20px;
+    padding: 10px;
     border: none;
     outline: none;
     background: transparent;
@@ -141,41 +135,40 @@ header.shadow #search-icon {
 }
 
 .home {
-    max-width: 1400px;
     margin: auto;
     width: 100%;
     min-height: 689px;
     display: flex;
     align-items: center;
     background: url("../img/Background-home.jpg");
-    background-repeat: no-repeat;
     background-size: cover;
     background-position: center left;
 }
 
 .home-text {
-    padding-left: 130px;
+    padding-left: 120px;
 }
 
 .home-text h1 {
-    font-size: 2.4rem;
+    font-size: 2.5rem;
 }
 
 .home-text span {
-    color: var(--main-color);
+    color: #0057FF;
 }
 
 .home-text p {
-    font-size: 0.938rem;
+    font-size: 1rem;
     font-weight: 300;
-    margin: 0.5rem 0 1.2rem;
+    margin: 0.5rem 0 1.4rem;
 }
 
 .btn {
     padding: 10px 22px;
-    background: var(--main-color);
-    color: var(--bg-color);
+    background: #0057FF;
+    color: white;
     font-weight: 400;
+    border-radius: 0.5rem;
 }
 
 .btn:hover {
@@ -186,13 +179,13 @@ header.shadow #search-icon {
     text-align: center;
 }
 
-.heading span {
-    font-weight: 500;
-    color: var(--main-color);
+.heading h2 {
+    color: #0057FF;
+    margin-bottom: 0.3rem;
 }
 
 .heading p {
-    font-size: 0.938rem;
+    font-size: 0.9rem;
     font-weight: 300;
 }
 
@@ -200,49 +193,35 @@ header.shadow #search-icon {
     display: none;
 }
 
-img {
-    vertical-align: middle;
-}
-
-.cars-slideshow {
+.slideshow {
     position: relative;
     margin: 2rem auto auto;
-    background-color: #e8e8e8;
     border-radius: 0.5rem;
 }
 
-.cars-slideshow .mySlides {
+.slideshow .mySlides {
     overflow: hidden;
     border-radius: 0.5rem;
 }
 
-.cars-slideshow .mySlides img {
+.slideshow .mySlides img {
     border-radius: 0.5rem;
     height: 400px;
     object-fit: cover;
     overflow: hidden;
 }
 
-.cars-slideshow .mySlides img:hover {
-    transform: scale(1.1);
-    transition: 0.5s;
-}
-
-.text {
+.mySlides .text {
+    position: absolute;
     color: #f2f2f2;
     font-weight: 400;
     font-size: 1rem;
-    background: var(--main-color);
+    background: #0057FF;
     padding: 8px;
     margin: 20px;
     border-radius: 0.5rem;
-    position: absolute;
     top: 0;
     z-index: 10;
-}
-
-.mySlides .active {
-    background-color: #717171;
 }
 
 .fade {
@@ -292,14 +271,14 @@ img {
     left: 1rem;
     font-weight: 400;
     font-size: 1rem;
-    background: var(--bg-color);
+    background: white;
     padding: 8px;
     border-radius: 0.5rem;
 }
 
 .cars-container .box:hover h2 {
-    background: var(--main-color);
-    color: var(--bg-color);
+    background: #0057FF;
+    color: white;
 }
 
 .about {
@@ -318,8 +297,9 @@ img {
 }
 
 .about-text span {
-    font-weight: 500;
-    color: var(--main-color);
+    font-weight: 600;
+    font-size: 1.2rem;
+    color: #0057FF;
 }
 
 .about-text h2 {
@@ -364,7 +344,7 @@ img {
     display: inline;
     font-size: 1rem;
     font-weight: 600;
-    color: var(--main-color);
+    color: #0057FF;
 }
 
 .parts-container .box .fa-star,
@@ -378,18 +358,21 @@ img {
 }
 
 .parts-container .box .details {
-    display: flex;
-    align-items: center;
     position: absolute;
     bottom: 1.8rem;
     right: 1rem;
     font-size: 1rem;
-    color: var(--text-color);
+    color: #020102;
 }
 
 .parts-container .box .details:hover {
-    color: var(--main-color);
+    color: #0057FF;
     text-decoration: underline;
+}
+
+.condition {
+    color: orange;
+    margin-top: 10px;
 }
 
 .news-container {
@@ -405,14 +388,14 @@ img {
 }
 
 .news-container .box:hover {
-    box-shadow: 4px 4px 20px rgb(15 54 55 / 50%);
-    transition: all 0.3s ease-in-out;
+    box-shadow: 4px 4px 20px gray;
+    transition: 0.3s ease-in-out;
     border-radius: 0.5rem;
 }
 
 .news-container .box span {
     font-size: 0.8rem;
-    color: var(--main-color);
+    color: #0057FF;
 }
 
 .news-container .box img {
@@ -427,15 +410,15 @@ img {
 }
 
 .news-container .box p {
-    font-size: 0.938rem;
-    margin: 4px 0;
+    font-size: 0.9rem;
+    margin: 5px 0;
 }
 
 .news-container .box .news-btn {
     display: flex;
     align-items: center;
     column-gap: 4px;
-    color: var(--text-color);
+    color: #020102;
 }
 
 .news-container .box .news-btn .fa-arrow-right {
@@ -443,15 +426,15 @@ img {
 }
 
 .news-container .box .news-btn:hover {
-    color: var(--main-color);
-    column-gap: 0.7rem;
-    transition: 0.5s;
+    color: #0057FF;
+    column-gap: 0.6rem;
+    transition: 0.4s;
 }
 
 .footer {
-    background-color: var(--text-color);
+    background-color: #020102;
     color: #e8e8e8;
-    border-top: 2px solid var(--main-color);
+    border-top: 2px solid #0057FF;
 }
 
 .footer-container {
@@ -461,7 +444,7 @@ img {
 }
 
 .footer-container .logo {
-    color: var(--bg-color);
+    color: white;
     margin-bottom: 1rem;
 }
 
@@ -477,12 +460,11 @@ img {
 
 .social a {
     font-size: 24px;
-    color: var(--bg-color);
     margin-right: 1rem;
 }
 
 .social a:hover {
-    color: var(--main-color);
+    color: #0057FF;
 }
 
 .footer-container h3 {
@@ -498,14 +480,14 @@ img {
 }
 
 .footer-box a:hover {
-    color: var(--main-color);
+    color: #0057FF;
 }
 
 .copyright {
     padding: 20px;
     text-align: center;
-    color: var(--bg-color);
-    background: var(--text-color);
+    color: white;
+    background: #020102;
 }
 
 .cars-details-container {
@@ -538,72 +520,57 @@ img {
     display: flex;
     font-size: 1.5rem;
     font-weight: 600;
-    color: var(--bg-color);
-    background: var(--main-color);
+    color: white;
+    background: #0057FF;
     width: fit-content;
     padding: 5px;
     border-radius: 0.5rem;
 }
 
-.condition {
-    display: flex;
-    align-items: center;
-    column-gap: 2px;
-    font-size: 1.1rem;
-    color: orange;
-    margin-top: 9px;
+.details-text .btn {
+    max-width: 120px;
+    border-radius: 0.5rem;
+    background: white;
+    color: #0057FF;
+}
+
+.details-text .btn:hover {
+    max-width: 120px;
+    border-radius: 0.5rem;
+    background: #0057FF;
+    color: white;
 }
 
 .tags {
-    display: flex;
     align-items: center;
     column-gap: 10px;
     margin: 1rem 0;
-    color: var(--bg-color);
-    background: var(--main-color);
+    color: white;
+    background: #0057FF;
     max-width: fit-content;
     padding: 4px;
     border-radius: 0.5rem;
 }
 
 .tags span {
-    background: var(--main-color);
+    background: #0057FF;
     padding: 0 4px;
-}
-
-.about-car {
-    position: relative;
-    margin-top: 2rem !important;
 }
 
 .about-car h2 {
     font-size: 1.4rem;
     font-weight: 600;
-    color: var(--main-color);
-    margin-top: 2rem !important;
+    color: #0057FF;
+    margin-top: 2rem;
 }
 
-.about-car p, .about-car ul li {
+.about-car p {
     font-size: 0.938rem;
     margin: 10px 0;
 }
 
-.listcar-heading-span {
+.listcar-heading-h2 {
     text-transform: uppercase;
-}
-
-.details-text .btn {
-    max-width: 120px;
-    border-radius: 0.5rem;
-    background: var(--bg-color);
-    color: var(--main-color);
-}
-
-.details-text .btn:hover {
-    max-width: 120px;
-    border-radius: 0.5rem;
-    background: var(--main-color);
-    color: var(--bg-color);
 }
 
 .news .headline {
@@ -611,22 +578,22 @@ img {
 }
 
 .share-item {
-    background: var(--main-color);
+    background: #0057FF;
     padding: 10px;
-    color: var(--bg-color);
+    color: white;
     margin-bottom: 1px;
 }
 
 .about-news {
     position: relative;
-    margin-top: 2rem !important;
+    margin-top: 2rem;
 }
 
 .about-news h2 {
     font-size: 1.4rem;
     font-weight: 600;
-    color: var(--main-color);
-    margin-top: 2rem !important;
+    color: #0057FF;
+    margin-top: 2rem;
 }
 
 .about-news p {
@@ -649,8 +616,8 @@ img {
 }
 
 .parts .mySlides .btn {
-    background-color: var(--main-color);
-    color: var(--bg-color);
+    background-color: #0057FF;
+    color: white;
 }
 
 .parts .mySlides .btn:hover {
@@ -658,33 +625,35 @@ img {
 }
 
 
-.parts .cars-slideshow .mySlides img {
+.parts .slideshow .mySlides img {
     border-radius: 0.5rem;
     height: fit-content;
     width: fit-content;
-    object-fit: cover;
+    object-fit: contain;
     overflow: hidden;
     margin-top: 70px;
 }
 
-.parts .cars-slideshow .mySlides .details-text {
+.parts .slideshow {
+    overflow: hidden;
+}
+
+.parts .slideshow .mySlides .details-text {
     padding-left: 20px;
 }
 
-.news .cars-slideshow {
-    background-color: var(--bg-color);
+.news .slideshow {
+    background-color: white;
     border-radius: 0;
 }
 
 
-@media (max-width: 1080px) {
+@media (max-width: 1280px) {
     .container {
         margin-left: 1rem;
         margin-right: 1rem;
     }
-}
 
-@media (max-width: 991px) {
     .nav {
         padding: 15px 20px;
     }
@@ -704,7 +673,7 @@ img {
 
 @media (max-width: 920px) {
     #search-icon {
-        color: var(--main-color);
+        color: #0057FF;
     }
 }
 
@@ -728,10 +697,10 @@ img {
         left: 0;
         display: flex;
         flex-direction: column;
-        background: var(--bg-color);
+        background: white;
         row-gap: 0.5rem;
         text-align: center;
-        box-shadow: 4px 4px 20px rgb(15 54 55 / 20%);
+        box-shadow: 4px 4px 20px grey;
         clip-path: circle(0% at 0% 0%);
         transition: 0.6s;
     }
@@ -744,8 +713,8 @@ img {
     .navbar a:hover,
     .navbar a.active {
         border-bottom: none;
-        background: var(--main-color);
-        color: var(--bg-color);
+        background: #0057FF;
+        color: white;
     }
 
     .navbar.active {
@@ -788,9 +757,34 @@ img {
         display: grid;
         grid-template-columns: 1fr 1fr;
     }
+
+    .slideshow .mySlides img{
+        height: 300px;
+    }
+
+    .mySlides .text {
+        font-size: 0.6rem;
+    }
+
+    .details-text .details-title {
+        font-size: 0.8rem;
+    }
+
+    .details-text .tags {
+        font-size: 0.5rem;
+        margin-top: 5px;
+        margin-bottom: 0;
+    }
+
+    .details-text .btn {
+        font-size: 0.6rem;
+        width: fit-content;
+        padding: 5px 10px;
+        margin-top: 5px;
+    }
 }
 
-@media (max-width: 360px) {
+@media (max-width: 376px) {
     .search-box input {
         padding: 11px;
     }
@@ -811,4 +805,38 @@ img {
         column-gap: 2px;
         margin-bottom: 0 !important;
     }
+
+    .slideshow .mySlides img{
+        height: 200px;
+    }
+
+    .mySlides .text {
+        font-size: 0.6rem;
+    }
+
+    .details-text .details-title,
+    .details-text .parts-title {
+        font-size: 0.8rem;
+    }
+
+    .details-text .tags {
+        font-size: 0.5rem;
+        margin-top: 5px;
+    }
+
+    .details-text .btn {
+        font-size: 0.6rem;
+        width: fit-content;
+        padding: 5px 10px;
+        margin-top: 5px;
+    }
+
+    .parts .mySlides {
+        height: 300px;
+    }
+
+    .mySlides img {
+        height: 200px !important;
+    }
+
 }

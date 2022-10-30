@@ -32,7 +32,7 @@ function showSlides() {
 let header = document.querySelector('header');
 
 window.addEventListener('scroll', () => {
-    header.classList.toggle('shadow', window.scrollY > 0);
+    header.classList.toggle('show', window.scrollY > 0);
 });
 
 

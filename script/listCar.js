@@ -1,4 +1,4 @@
-let headingSpan = document.querySelector('.listcar-heading-span');
+let headingSpan = document.querySelector('.listcar-heading-h2');
 let slideshowTitle = document.querySelectorAll('.slideshow-title');
 let slideshowImg = document.querySelectorAll('.slideshow-img');
 let carImg = document.querySelectorAll('.listcar-img');
